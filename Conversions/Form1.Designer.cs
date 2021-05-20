@@ -161,7 +161,7 @@ namespace Conversions
             this.Controls.Add(this.conversion1);
             this.Controls.Add(this.title);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Conversions";
             this.ResumeLayout(false);
             this.PerformLayout();
 
