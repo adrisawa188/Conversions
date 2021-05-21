@@ -21,24 +21,28 @@ namespace Conversions
         {
             try
             {
-            double choice = Convert.ToDouble(choiceInput.Text);
-            double number = Convert.ToDouble(inputValue.Text);
-           
+                double choice = Convert.ToDouble(choiceInput.Text);
+                double number = Convert.ToDouble(inputValue.Text);
+
                 if (choice == 1)
                 {
-                    InchToCm(number);
+                    double total1 = InchToCm(number);
+                    outputLabel.Text = $"{number} inches is {total1} cms";
                 }
                 else if (choice == 2)
                 {
-                    FeetToCm(number);
+                    double total2 = FeetToCm(number);
+                    outputLabel.Text = $"{number} feet is {total2} cms";
                 }
                 else if (choice == 3)
                 {
-                    YardsToMetres(number);
+                   double total3 = YardsToMetres(number);
+                   outputLabel.Text = $"{number} yards is {total3} metres";
                 }
                 else if (choice == 4)
                 {
-                    KilometresToMiles(number);
+                    double total4 = KilometresToMiles(number);
+                    outputLabel.Text = $"{number} miles is {total4} kilometres";
                 }
                 else
                 {
@@ -50,32 +54,29 @@ namespace Conversions
 
         }
 
-        public void InchToCm(double inch)
+        public double InchToCm(double inch)
         {
             double cm = inch * 2.54;
-
-            outputLabel.Text = $"{inch} inches is {cm} cms";
+            return cm;
         }
 
-        public void FeetToCm(double feet)
+        public double FeetToCm(double feet)
         {
             double cm = feet * 30.48;
-
-            outputLabel.Text = $"{feet} feet is {cm} cms";
+            return cm;         
         }
 
-        public void YardsToMetres(double yard)
+        public double YardsToMetres(double yard)
         {
             double metre = yard * 0.91;
-
-            outputLabel.Text = $"{yard} yards is {metre} metres";
+            return metre;           
         }
 
-        public void KilometresToMiles(double mile)
+        public double KilometresToMiles(double mile)
         {
             double kilometre = mile * 1.6;
-
-            outputLabel.Text = $"{mile} miles is {kilometre} kilometres";
+            return kilometre;
+            
         }
     }
 }
